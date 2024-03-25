@@ -11,25 +11,20 @@ def DodajLiterka(literka, ilosc):
 def ShortWord(wyraz_in):
     dlugosc = len(wyraz_in)
     wyraz_out = ''
-    licznik = 0
-    literka = ''
+    licznik = 1
+    i = 0
 
-    for i in range(dlugosc):
-        literka = wyraz_in[i]
-        if i == dlugosc-1 and i != 0:
+    while i < dlugosc:
+        if i + 1 < dlugosc and wyraz_in[i] == wyraz_in[i + 1]:
             licznik += 1
-            wyraz_out += DodajLiterka(literka, licznik)
         else:
-            if wyraz_in[i+1] == literka:
-                licznik += 1
-            else:
-                licznik += 1
-                wyraz_out += DodajLiterka(literka, licznik)
-                licznik = 0
+            wyraz_out += DodajLiterka(wyraz_in[i], licznik)
+            licznik = 1
+        i += 1
 
-    return str(wyraz_out)
+    return wyraz_out
 
 t = int(input())
 for _ in range(t):
-    slowo = str(input())
+    slowo = input()
     print(ShortWord(slowo))
