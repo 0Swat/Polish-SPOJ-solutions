@@ -19,6 +19,11 @@ def pole(liczby):
     return wynik
 
 def answer(pole_czarne, pole_szare):
+    if pole_czarne > pole_szare:
+        temp = pole_czarne
+        pole_czarne = pole_szare
+        pole_szare = temp
+
     cena_czarne = 10
     cena_szare = 6
     pole_szare -= pole_czarne
@@ -31,7 +36,10 @@ def main():
         liczby1 = list(map(int, input().split()))
         liczby2 = list(map(int, input().split()))
         print(answer(pole(liczby1), pole(liczby2)))
-        input()
+        try:
+            input()
+        except:
+            continue
         t-=1
 
 if __name__ == '__main__':
