@@ -9,8 +9,12 @@ def answer(a, b, c):
 
 
 def main():
-    a, b, c = map(float, input().split())
-    print(answer(a, b, c))
+    while True:
+        try:
+            a, b, c = map(float, input().split())
+            print(answer(a, b, c))
+        except EOFError:
+            break
 
 if __name__ == '__main__':
     main()
