@@ -1,12 +1,13 @@
 def answer(a, b, c):
-    if b == c and a == b:
-            return "NWR"
     if a == 0.0:
         if b == c:
             return "NWR"
-        return "BR"
-    x = (c - b)/a
-    return round(x, 2)
+        else:
+            return "BR"
+    else:
+        x = (c - b) / a
+        return f"{round(x, 2):.2f}"
+
 
 def main():
     a, b, c = map(float, input().split())
