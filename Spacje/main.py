@@ -16,7 +16,6 @@ def answer(text):
             flaga = False
     print(out)
 
-
 def main():
     while True:
         try:
