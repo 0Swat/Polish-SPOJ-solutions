@@ -35,17 +35,17 @@ def main():
     for i in range(len(kombinacje_in)):
         znaleziono = False
         znalezione_wyrazy = []
+        
         for j in range(len(kombinacje)):
             if kombinacje_in[i] == kombinacje[j]:
                 znaleziono = True
                 znalezione_wyrazy.append(wyrazy[j])
+
         if znaleziono == False:
             print("BRAK")
         else:
             znalezione_wyrazy.sort()
             print(' '.join(znalezione_wyrazy))
-
-
 
 if __name__ == '__main__':
     main()
