@@ -4,8 +4,7 @@ def answer(data):
 
     for i in range(len(data)):
         dlugosc += length(data[i], kopiec)
-        print(dlugosc)
-
+        
     print(str(kopiec) + " " + str(dlugosc))
 
 
