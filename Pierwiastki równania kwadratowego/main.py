@@ -1,14 +1,22 @@
+from decimal import Decimal, getcontext
+
 def answer(a, b, c, k):
-    delta = b*b - 4*a*c
-    if delta < 0:
-        print('0')
+    getcontext().prec = k+1
+    delta = (b * b) - (4 * a * c)
+    if delta < 0 or a == 0:
+        print(0)
     elif delta == 0:
-        x = -b / 2*a
-        print('1 ' + str(x))
+        x = -b / (2 * a)
+        print('1 {}'.format(x))
     elif delta > 0:
-        x1 = (-1*b - delta**0.5) / 2*a
-        x2 = (-1*b + delta**0.5) / 2*a
-        print('2 ' + str(x1) + ' ' + str(x2))
+        sqrt_delta = Decimal(delta).sqrt()
+        x1 = (-b - sqrt_delta) / (2 * a)
+        x2 = (-b + sqrt_delta) / (2 * a)
+
+        if x2 > x1:
+            print('2 {} {}'.format(x1, x2))
+        else:
+            print('2 {} {}'.format(x2, x1))
 
 def main():
     t = int(input())
