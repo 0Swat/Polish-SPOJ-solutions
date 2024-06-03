@@ -1,7 +1,10 @@
 from decimal import Decimal, getcontext
 
 def answer(a, b, c, k):
-    getcontext().prec = k+1
+    getcontext().prec = k+50
+    a = Decimal(a)
+    b = Decimal(b)
+    c = Decimal(c)
     delta = (b * b) - (4 * a * c)
     if delta < 0 or a == 0:
         print(0)
