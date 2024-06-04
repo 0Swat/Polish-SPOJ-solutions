@@ -70,9 +70,6 @@ class System_WIZUT_2009:
                     self.files.remove(file)
 
 
-                
-
-
 def main():
     n = int(input())
     r = int(input())
