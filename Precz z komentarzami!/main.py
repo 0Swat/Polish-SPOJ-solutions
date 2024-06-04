@@ -32,7 +32,6 @@ def answer_line(data, line, long, long_end, komentarz):
     
     if data_out != "" or komentarz == False:
         print(data_out)
-
     return(False, long, long_end, komentarz)
 
 
@@ -45,7 +44,7 @@ def main():
     while True:
         try:
             data = str(input())
-            line, long, long_end = answer_line(data, line, long, long_end, komentarz)
+            line, long, long_end, komentarz = answer_line(data, line, long, long_end, komentarz)
         except EOFError:
             break
 
