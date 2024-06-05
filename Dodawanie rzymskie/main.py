@@ -58,12 +58,25 @@ def OneDecimal2Roman(decimal):
     else:
          return ""
     
+def Decimal2Roman(decimal):
+    
+    decimal_number = decimal
+    return_roman = ""
+
+    while decimal_number:
+         return_roman += OneDecimal2Roman(decimal_number)
+         decimal_number -= Roman2Decimal(OneDecimal2Roman(decimal_number))
+
+    return return_roman
+         
+    
     
 
 def main():
     print(OneRoman2Decimal("M"))
     print(Roman2Decimal("CXXIII"))
     print(OneDecimal2Roman(960))
+    print(Decimal2Roman(1461))
     return
 
 if __name__ == '__main__':
