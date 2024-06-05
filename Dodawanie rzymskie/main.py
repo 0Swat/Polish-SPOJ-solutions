@@ -68,16 +68,14 @@ def Decimal2Roman(decimal):
          decimal_number -= Roman2Decimal(OneDecimal2Roman(decimal_number))
 
     return return_roman
-         
     
-    
-
 def main():
-    print(OneRoman2Decimal("M"))
-    print(Roman2Decimal("CXXIII"))
-    print(OneDecimal2Roman(960))
-    print(Decimal2Roman(1461))
-    return
+    while True:
+        try:
+            roman_1, roman_2 = map(str, input().split())
+            print(Decimal2Roman(Roman2Decimal(roman_1) + Roman2Decimal(roman_2)))
+        except EOFError:
+             break
 
 if __name__ == '__main__':
     main()
