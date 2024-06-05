@@ -27,11 +27,43 @@ def Roman2Decimal(roman):
     return_sum += OneRoman2Decimal(roman[len(roman)-1])
 
     return return_sum
+
+def OneDecimal2Roman(decimal):
+    if decimal >= 1000:
+         return "M"
+    elif decimal >= 900:
+         return "CM"
+    elif decimal >= 500:
+         return "D"
+    elif decimal >= 400:
+         return "CD"
+    elif decimal >= 100:
+         return "C"
+    elif decimal >= 90:
+         return "XC"
+    elif decimal >= 50:
+         return "L"
+    elif decimal >= 40:
+         return "XL"
+    elif decimal >= 10:
+         return "X"
+    elif decimal >= 9:
+         return "IX"
+    elif decimal >= 5:
+         return "V"
+    elif decimal >= 4:
+         return "IV"
+    elif decimal >= 1:
+         return "I"
+    else:
+         return ""
+    
     
 
 def main():
     print(OneRoman2Decimal("M"))
     print(Roman2Decimal("CXXIII"))
+    print(OneDecimal2Roman(960))
     return
 
 if __name__ == '__main__':
