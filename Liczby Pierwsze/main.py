@@ -13,7 +13,11 @@ def CzyLiczbaPierwsza(n):
                 i+=1
         else:
             return 'TAK'
-        
-n = int(input())
-for _ in range(n):
-    print(CzyLiczbaPierwsza(int(input())))
+
+def main():
+    n = int(input())
+    for _ in range(n):
+        print(CzyLiczbaPierwsza(int(input())))
+
+if __name__ == '__main__':
+    main()
