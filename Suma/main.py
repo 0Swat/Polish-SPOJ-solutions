@@ -7,4 +7,9 @@ def Suma():
             print(suma)
         except:
             break
-Suma()
+
+def main():
+    Suma()
+
+if __name__ == '__main__':
+    main()
